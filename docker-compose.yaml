@@ -1,10 +1,14 @@
-version: '2'
-services:
-  web:
-    # build: .
-    command: npm run start
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    ports:
-      - "8080:8080"
+hub:
+  container_name: 9-project
+  image: docker-app:latest
+  ports:
+    - "8080:8080"
+  environment:
+    - GRID_TIMEOUT=30000
+    - GRID_BROWSER_TIMEOUT=30000
+    - GRID_MAX_SESSION=6
+chrome:
+  image: docker-app:latest
+  links:
+    - hub
+  shm_size: 128M

@@ -4,6 +4,6 @@ git clone https://github.com/Adakai/9-project.git
 
 cd 9-project
 
-# docker run -p 8080:8080 -d docker-app/node-web-app
+docker build .
 
 docker-compose up

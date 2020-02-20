@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: .
+    # build: .
     command: npm run start
     volumes:
       - .:/usr/src/app
